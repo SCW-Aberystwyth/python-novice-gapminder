@@ -82,13 +82,12 @@ NameError: name 'last_name' is not defined
 *   The last line of an error message is usually the most informative.
 *   We will look at error messages in detail [later]({{ page.root }}/15-scope/#reading-error-messages).
 
-> ## Variables Persist 
->
-> Python will remember **all** the code that was run previously, including any variables you have
-> defined, irrespective of whether they were entered directly in the console or run through a script. 
-> You can reset everything by clicking the X button and closing the console, another console will automatically reload.
->
-ef
+## Variables Persist 
+
+Python will remember **all** the code that was run previously, including any variables you have
+defined, irrespective of whether they were entered directly in the console or run through a script. 
+You can reset everything by clicking the X button and closing the console, another console will automatically reload.
+
 ## Variables can be used in calculations.
 
 *   We can use variables in calculations just as if they were values.
