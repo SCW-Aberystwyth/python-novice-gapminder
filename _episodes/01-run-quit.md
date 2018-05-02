@@ -6,15 +6,12 @@ questions:
 - "How can I run Python programs?"
 objectives:
 - "Use Anaconda to launch Spyder."
-- "Create Markdown cells in a notebook."
-- "Create and run Python cells in a notebook."
+- "Understand the difference between a script and directly typed commands."
 keypoints:
 - "Python programs are plain text files."
-- "Use the Jupyter Notebook for editing and running Python."
-- "The Notebook has Command and Edit modes."
-- "Use the keyboard and mouse to select and edit cells."
-- "The Notebook will turn Markdown into pretty-printed documentation."
-- "Markdown does most of what HTML does."
+- "Use Spyder for editing and running Python."
+- "Spyder can edit Python script files and run them."
+- "Spyder can be used to issue single commands to Python."
 ---
 ## Python programs are plain text files.
 
