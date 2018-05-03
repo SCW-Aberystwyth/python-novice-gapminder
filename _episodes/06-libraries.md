@@ -24,7 +24,7 @@ keypoints:
     *   Library's contents are supposed to be related, but there's no way to enforce that.
 *   The Python [standard library][stdlib] is an extensive suite of modules that comes
     with Python itself.
-*   Many additional libraries are available from [PyPI][pypi] (the Python Package Index).
+*   Many additional libraries are available from [PyPI][pypi] (the Python Package Index) or via Anaconda Navigator.
 *   We will see later how to write new libraries.
 
 > ## Libraries and modules
@@ -217,8 +217,7 @@ cos(pi) is -1.0
 > import random
 > ___ = random.randrange(0, n_bases)
 > ___ = len(bases)
-> print("random base ", bases[])
-> ___ = len(bases)
+> print("random base ", bases[___])
 > ~~~
 > {: .python}
 >
@@ -377,6 +376,6 @@ cos(pi) is -1.0
 > {: .solution}
 {: .challenge}
 
-[pypi]: https://pypi.python.org/pypi/
+[pypi]: https://pypi.python.org/
 [stdlib]: https://docs.python.org/3/library/
 [randommod]: https://docs.python.org/3/library/random.html

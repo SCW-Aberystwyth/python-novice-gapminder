@@ -19,7 +19,6 @@ keypoints:
 - "Functions may only work for certain (combinations of) arguments."
 - "Functions may have default values for some arguments."
 - "Use the built-in function `help` to get help for a function."
-- "The Jupyter Notebook has two ways to get help."
 - "Every function returns something."
 - "Python reports a syntax error when it can't understand the source of a program."
 - "Python reports a runtime error when something goes wrong while a program is executing."
@@ -195,13 +194,6 @@ NameError: name 'aege' is not defined
 {: .error}
 
 *   Fix syntax errors by reading the source and runtime errors by tracing execution.
-
-## The Jupyter Notebook has two ways to get help.
-
-*   Place the cursor inside the parenthesis of the function,
-    hold down `shift`,
-    and press `tab`.
-*   Or type a function name with a question mark after it.
 
 ## Every function returns something.
 
