@@ -196,13 +196,6 @@ NameError: name 'aege' is not defined
 
 *   Fix syntax errors by reading the source and runtime errors by tracing execution.
 
-## The Jupyter Notebook has two ways to get help.
-
-*   Place the cursor inside the parenthesis of the function,
-    hold down `shift`,
-    and press `tab`.
-*   Or type a function name with a question mark after it.
-
 ## Every function returns something.
 
 *   Every function call produces some result.
