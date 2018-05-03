@@ -1,10 +1,16 @@
 ---
 layout: break
-title: "Morning Coffee"
+title: "Coffee Break"
 teaching: 0
 exercises: 0
 break: 15
 ---
+# Feedback
+ On one of your poststick notes write the following:
+ * One thing that has been good so far.
+ * One thing that you've struggled to understand or would like more explanation of.
+ * are we going too fast, too slow or about right?
+
 # Reflection exercise
 
 Over coffee, reflect on and discuss the following:
