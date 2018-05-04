@@ -250,7 +250,7 @@ max      13450.401510    16361.876470    18965.055510
 > ~~~
 > import pandas
 >
-> df = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+> data = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 > ~~~
 > {: .python}
 >
@@ -260,7 +260,7 @@ max      13450.401510    16361.876470    18965.055510
 > > ## Solution
 > > The selection can be done by using the labels for both the row ("Serbia") and the column ("gdpPercap_2007"):
 > > ~~~
-> > print(df.loc['Serbia', 'gdpPercap_2007'])
+> > print(data.loc['Serbia', 'gdpPercap_2007'])
 > > ~~~
 > >{: .python}
 > > The output is
