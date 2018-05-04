@@ -39,20 +39,21 @@
 * Explain code editor and console
 * python vs ipython console
 * files can be saved and run from the command line, useful on HPC
+* change working directory in spyder, useful for this to be the same as data dir later to avoid long paths 
 
 ## Variables and Assignment
 
 ### Variables 
 
-* variables store values, text or number
-* = assigns from right to left
+variables store values, text or number
+= assigns from right to left
 
 ```age = 42```
 ```first_name = ahmed```
 
-* explain variable explorer
-* explain variable names can only be letters, digits and underscores. Cannot start with a digit
-* double underscore at the start has special meaning
+explain variable explorer
+explain variable names can only be letters, digits and underscores. Cannot start with a digit
+double underscore at the start has special meaning
 
 
 ### print
@@ -269,6 +270,209 @@ we can alias a library name for a shorthand. nice to shorten long names, needs t
 * importing specific items
 * reading error messages
 
+### Summary 
+
+## Reading Tabular Data into DataFrames
+
+pandas library good for reading tabular data, statistics, spreadsheets etc
+similar to R's dataframes
+2d table, named columns, possibly different data types
+import pandas, read data with pandas.read_csv function 
+you'll need the gap minder data now, we need the full path to the file
+
+```import pandas```
+```data = pandas.read_csv('/home/colin/Work/SCW/pyton-novice-gapminder/data/gapminder_gdp_oceania.csv')```
+```print(data)```
+
+data is hard to read from the print statement, use the variable explorer instead
+
+in this output row indicies are 0/1, not country names. We want country names.
+
+```data = pandas.read_csv('data/gapminder_gdp_oceania.csv',index_col='country')```
+```print(data)```
+
+0/1 from start are now gone, country names at the start instead
+find out more info with ```data.info()```
+shows data types, number of columns, row names, non-null (not empty), memory use
+
+DataFrame.columns tells us about the columns, this is a variable not a function. Called a member variable.
+
+```print(data.columns)```
 
 
+DataFrame.T to transpose, treat columns as rows or vice-versa, doesn't copy data just changes the view of it. Its another member variable.
 
+```print(data.T)```
+
+DataFrame.describe, fucntion to get summary stats for numerical columns. include='all' argument does all columns.
+
+```print(data.describe())```
+
+### Exercises
+* reading other data
+* inspecting data
+* reading files in other directories
+* writing data
+
+### Summary 
+* pandas can get basic stats on tabular data
+* use index_col argument to read_csv to choose a column for row headings
+* DataFrame.info gives more info about a dataframe
+* DataFrame.columns info about columns
+* DataFrame.T transposes
+* DataFrame.describe summary stats 
+
+## Pandas DataFrames
+
+We can specify which bit of the dataframe to get numerically. They are 2D arrays, zero based. We saw this earlier with strings, but only 1 dimensional. Demonstrate from data view in spyder. data.iloc lets us do this. 
+
+```import pandas```
+```data = pandas.read_csv('data/gapminder_gdp_europe.csv',index_col='country')```
+```print(data.iloc[0,0])```
+
+gives 1601.056136, GDP for Albania. Remove index_col and it will say Albania.
+
+data.loc lets us do the same thing but uses column/row names. 
+
+```print(data.loc["Albania","gdpPercap_1952"])```
+
+If we want all rows the : operator will do that
+
+```print(data.loc["Albania",:])```
+
+Same achieved without the colon
+
+```print(data.loc["Albania"])```
+
+We can get the second index instead:
+
+```print(data.loc[:,"gdpPercap_1952"])```
+
+alternatives:
+
+```print(data.loc["gdpPercap_1952"])```
+```print(data.gdpPercap_1952)```
+
+we can also select multiple rows, the : operator means between in this case. Reminder that this is called slicing. 
+
+```print(data.loc['Italy':'Poland','gdpPercap_1952':'gdpPercap_1972'])```
+
+Slices can be used in another operation
+```print(data.loc['Italy':'Poland','gdpPercap_1952':'gdpPercap_1972'].max())```
+or
+```print(data.loc['Italy':'Poland','gdpPercap_1952':'gdpPercap_1972'].min())```
+
+subsets of data can be copied to another dataframe 
+
+```# Use a subset of data to keep output readable.```
+```subset = data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972']```
+```print('Subset of data:\n', subset)```
+
+pandas can do querying based on certain conditions. Here we check for values over 10,000. 
+
+
+```# Which values were greater than 10000 ?```
+```print('\nWhere are values large?\n', subset > 10000)```
+
+A mask can be created to block out values that don't meet our criteria. These will be changed to NaN (not a number)
+
+```mask = subset > 10000```
+```print(subset[mask]```
+
+We can get some summary stats by doing describe on the masked subset. NaNs are ignored by the statistical operations.
+
+```print(subset[subset > 10000].describe())```
+
+### Exercises
+* selection of individual values
+* extent of slicing
+* reconstructing data
+* selecting indicies
+* practice with selection
+* thought exercise on data interpretation
+
+### Summary
+* use iloc to select by integer value, loc to select by name
+* : means all rows or columns, slice a range between two values with :
+* make comparisons of the data and extract a subset
+* masks to mask out certain data for performing stats
+* masks turn to NaNs
+
+## Plotting
+
+Configure where plots appear with Tools->Preferences->IPython Console then graphics tab. Inline for inline display in the console and automatic for their own window. Close iPython console and let it reload.
+
+```import matplotlib.pyplot as plt```
+```time = [0, 1, 2, 3]```
+```position = [0, 100, 200, 300]```
+
+```plt.xlabel('Time (hr)')```
+```plt.ylabel('Position (km)')```
+```plt.plot(time, position)```
+
+We can plot data from a pandas dataframe instead of a list. DataFrame.plot implicitly calls matplotlib's plot function, it also imports matplotlib for us. 
+
+```import pandas```
+```data = pandas.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')```
+```data.loc['Australia'].plot()```
+```plt.xticks(rotation=90)```
+
+Rows (years in this case) will be x-axis, transpose data to change this.
+
+```data.T.plot()```
+```plt.ylabel('GDP per captia')```
+```plt.xticks(rotation=90)```
+
+Other styles can be done such bar charts.
+
+```plt.style.use('ggplot')```
+```data.T.plot(kind='bar')```
+```plt.xticks(rotation=90)```
+```plt.ylabel('GDP per capita')```
+
+annoying having gdpPercap_year in labels, we just want year 
+strip function will remove some text
+
+```years = data.columns.str.strip('gdpPercap_')```
+
+just have Australia data
+```gdp_australia = data.loc['Australia']```
+
+use g-- style to have dashed lines
+```plt.plot(years, gdp_australia, 'g--')```
+
+now plot several data sets together to combine Australia and New Zealand again
+```# Select two countries' worth of data.```
+```gdp_australia = data.loc['Australia']```
+```gdp_nz = data.loc['New Zealand']```
+
+```# Plot with differently-colored markers.```
+```plt.plot(years, gdp_australia, 'b-', label='Australia')```
+```plt.plot(years, gdp_nz, 'g-', label='New Zealand')```
+
+```# Create legend.```
+```plt.legend(loc='upper left')```
+```plt.xlabel('Year')```
+```plt.ylabel('GDP per capita ($)')```
+
+Change into a scatter diagram, correlating the two data sets
+
+```plt.scatter(gdp_australia,gdp_nz)```
+
+label axes 
+
+```plt.xlabel('Australia')```
+```plt.ylabel('New Zealand')```
+
+### Exercises 
+* minima and maxima
+* correlations
+* more correlations
+
+### Summary
+* matplotlib popular way to plot things in python
+* we can plot directly from a pandas dataframe, indirectly calls matplotlib
+* workflow: select data, transform it, plot it
+* many plot styles available
+* can plot multiple data sets together
+https://matplotlib.org/gallery/index.html for examples of what matplotlib can do
