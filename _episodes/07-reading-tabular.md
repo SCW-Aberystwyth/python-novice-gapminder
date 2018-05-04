@@ -339,7 +339,7 @@ max      23424.766830    26997.936570    30687.754730    34435.367440
 >
 > The data for your current project is stored in a file called `microbes.csv`,
 > which is located in a folder called `field_data`.
-> You are doing analysis in a notebook called `analysis.py`
+> You are doing analysis in a file called `analysis.py`
 > in a sibling folder called `thesis`:
 >
 > ~~~
