@@ -492,3 +492,9 @@ label axes
 * many plot styles available
 * can plot multiple data sets together
 https://matplotlib.org/gallery/index.html for examples of what matplotlib can do
+
+## End of day 1
+* feedback, most important thing I learned today
+* one thing I want further clarification of
+Go watch joy of stats, https://www.gapminder.org/videos/the-joy-of-stats/
+
