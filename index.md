@@ -8,8 +8,7 @@ for people with little or no previous programming experience.
 It uses plotting as its motivating example,
 and is designed to be used in both [Data Carpentry]({{ site.dc_site }})
 and [Software Carpentry]({{ site.swc_site }}) workshops.
-This lesson references the Jupyter Notebook,
-but can be taught using a regular Python interpreter as well.
+
 Please note that this lesson uses Python 3 rather than Python 2.
 
 > ## Under Design
@@ -28,7 +27,7 @@ Please note that this lesson uses Python 3 rather than Python 2.
 >     what a working directory is,
 >     and how to start a Python interpreter.
 >
-> 2. Learners must install Python before the class starts.
+> 2. Learners must install Python before the class starts. The Anaconda Distribution (Python3 version) is recommended, this can be downloaded from https://www.anaconda.com/download/. 
 >
 > 3. Learners must get the gapminder data before class starts:
 >    please download and unzip the file 
