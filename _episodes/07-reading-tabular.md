@@ -339,7 +339,7 @@ max      23424.766830    26997.936570    30687.754730    34435.367440
 >
 > The data for your current project is stored in a file called `microbes.csv`,
 > which is located in a folder called `field_data`.
-> You are doing analysis in a notebook called `analysis.ipynb`
+> You are doing analysis in a file called `analysis.py`
 > in a sibling folder called `thesis`:
 >
 > ~~~
@@ -347,11 +347,11 @@ max      23424.766830    26997.936570    30687.754730    34435.367440
 > +-- field_data/
 > |   +-- microbes.csv
 > +-- thesis/
->     +-- analysis.ipynb
+>     +-- analysis.py
 > ~~~
 > {: .output}
 >
-> What value(s) should you pass to `read_csv` to read `microbes.csv` in `analysis.ipynb`?
+> What value(s) should you pass to `read_csv` to read `microbes.csv` in `analysis.py`?
 > 
 > > ## Solution
 > > We need to specify the path to the file of interest in the call to `pandas.read_csv`. We first need to 'jump' out of

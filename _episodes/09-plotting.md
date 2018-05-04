@@ -17,23 +17,17 @@ keypoints:
 ## [`matplotlib`](https://matplotlib.org/) is the most widely used scientific plotting library in Python.
 
 *   Commonly use a sub-library called [`matplotlib.pyplot`](https://matplotlib.org/api/pyplot_api.html).
-*   The Jupyter Notebook will render plots inline if we ask it to using a "magic" command.
-
-~~~
-%matplotlib inline
-import matplotlib.pyplot as plt
-~~~
-{: .python}
-
+*   Spyder will render plots inline by default. Change this to display in a window by going to Tools->Preferences->IPython Console, click on the graphics tab and select "Automatic" as the backend. Then close the iPython console and let it reload. 
 *   Simple plots are then (fairly) simple to create.
 
 ~~~
+import matplotlib.pyplot as plt
 time = [0, 1, 2, 3]
 position = [0, 100, 200, 300]
 
-plt.plot(time, position)
 plt.xlabel('Time (hr)')
 plt.ylabel('Position (km)')
+plt.plot(time, position)
 ~~~
 {: .python}
 ![Simple Position-Time Plot](../fig/9_simple_position_time_plot.png)  
@@ -115,11 +109,16 @@ plt.scatter(gdp_australia, gdp_nz)
 ~~~
 {: .python}
 ![GDP correlation using plt.scatter](../fig/9_gdp_correlation_plt.png)
+
+This plots straight from the data in the dataframe without extracting it into separate lists for each country. The x and y arguments tell us which data columns to use.
 ~~~
 data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 ~~~
 {: .python}
 ![GDP correlation using data.T.plot.scatter](../fig/9_gdp_correlation_data.png)
+
+{: .python}
+
 > ## Minima and Maxima
 >
 > Fill in the blanks below to plot the minimum GDP per capita over time
