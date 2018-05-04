@@ -93,6 +93,22 @@ len gets us string length. Functions can be nested, inner function evaluated fir
 
 explain variable names are case sensitive. Use meaningful variable names. Python doesn't care, humans do.
 
+### Exercises
+* swapping values
+* predicting values
+* substrings of numbers
+* choosing variable names
+* slicing 
+
+### Summary
+* variables store values, print displays them
+* variables must be created before use
+* can be used in calculations
+* use an index to get single characters from a string
+* slices to get substrings
+* len function gives string length
+* variable names case sensitive, don't use spaces in names, make names meaningful
+
 ## Data Types and Type conversion
 
 types are integers, floats and strings 
