@@ -295,9 +295,9 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 > ~~~
 > {: .output}
 >
-> 1.  What does `thing[low:high]` do?
-> 2.  What does `thing[low:]` (without a value after the colon) do?
-> 3.  What does `thing[:high]` (without a value before the colon) do?
-> 4.  What does `thing[:]` (just a colon) do?
-> 5.  What does `thing[number:negative-number]` do?
+> 1.  What does `atom_name[low:high]` do?
+> 2.  What does `atom_name[low:]` (without a value after the colon) do?
+> 3.  What does `atom_name[:high]` (without a value before the colon) do?
+> 4.  What does `atom_name[:]` (just a colon) do?
+> 5.  What does `atom_name[number:negative-number]` do?
 {: .challenge}
