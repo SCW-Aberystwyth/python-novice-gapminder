@@ -414,6 +414,12 @@ We can get some summary stats by doing describe on the masked subset. NaNs are i
 * masks to mask out certain data for performing stats
 * masks turn to NaNs
 
+## End of day 1
+* feedback, most important thing I learned today
+* one thing I want further clarification of
+
+Go watch joy of stats, https://www.gapminder.org/videos/the-joy-of-stats/
+
 ## Plotting
 
 Configure where plots appear with Tools->Preferences->IPython Console then graphics tab. Inline for inline display in the console and automatic for their own window. Close iPython console and let it reload.
@@ -493,8 +499,110 @@ label axes
 * can plot multiple data sets together
 https://matplotlib.org/gallery/index.html for examples of what matplotlib can do
 
-## End of day 1
-* feedback, most important thing I learned today
-* one thing I want further clarification of
-Go watch joy of stats, https://www.gapminder.org/videos/the-joy-of-stats/
+
+## Lists
+
+using hundreds+ variables would get tedious and complicated
+
+lists store multiple variables together as one
+
+use [ and ] to index a list
+
+values separated by commas 
+
+len gives the number of items in a list
+
+```pressures = [ 0.273, 0.275, 0.277, 0.275, 0.276]```
+```print('pressures:',pressures)```
+```print('length:',len(pressures))```
+
+we can fetch single items from a list with an index, just like we did with strings 
+
+```print('zeroth item from pressures:',pressures[0])```
+```print('fourth item from pressures:',pressures[4])```
+
+we can change the contents of a list item by assigning it
+
+```pressures[0] = 0.265```
+```print(pressures)```
+
+Extra items can be added with the append method.
+
+```primes = [2,3,5]```
+```print('primes is initially:',primes)```
+```primes.append(7)```
+```primes.append(9)```
+```print('primes has become:',primes)```
+
+methods are like functions but apply to a particular object (list in this case). objectname.method_name 
+we used these already with dataframes 
+
+help(list) shows a list of them
+
+extend method is similar to append but combines two lists
+
+```teen_primes = [11, 13, 17, 19]```
+```middle_aged_primes = [37, 41, 43, 47]```
+```print('primes is currently:', primes)```
+```primes.extend(teen_primes)```
+```print('primes has now become:', primes)```
+
+we can also append lists, but then we end up with a list within a list
+
+```primes.append(middle_aged_primes)```
+```print('primes has finally become:', primes)```
+
+items are removed from a list with del
+different syntax
+
+```del primes[4]```
+
+empty lists are defined by []
+useful if we want an empty list declared to use later on
+
+lists can contain different types
+
+```goals = [ 1, 'Create lists.', 2, 'Extract items from lists.', 3,'Modify lists.']```
+
+remember that character strings work like lists for getting single characters
+
+```element = 'carbon'```
+```print('zeroth character:',element[0])```
+```print('third character:',element[3])```
+
+character strings are immutable, we can't change single characters after we create the string
+lists are mutable and can be changed
+
+```element[0] = 'C'```
+
+results in error
+
+going beyond the end of the list causes an error. This is a runtime error, can't be detected in advance as we might not know how long the list will be.
+
+```print('99th element is',element[99])```
+```print(goals[99])```
+
+### Exercises
+* fill in the blanks, shows list slicing
+* how large is a slice
+* from strings to lists and back, introduces list function to convert strings to lists
+* working with the end, negative slicing, removes the end
+* stepping through a list, list strides (intervals)
+* slice bounds, -1:3 returns nothing trying to go backwards
+* sorting, sorted returns the sorted list, leaves original alone. sort modifies original. 
+* copying, this does a copy by reference in A and copy by value in B
+
+
+### Summary
+
+* A list stores many values in a single structure.
+* Use an item’s index to fetch it from a list.
+* Lists’ values can be replaced by assigning to them.
+* Appending items to a list lengthens it.
+* Use del to remove items from a list entirely.
+* The empty list contains no values.
+* Lists may contain values of different types.
+* Character strings can be indexed like lists.
+* Character strings are immutable.
+* Indexing beyond the end of the collection is an error.
 
