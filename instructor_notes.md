@@ -571,7 +571,7 @@ remember that character strings work like lists for getting single characters
 ```print('third character:',element[3])```
 
 character strings are immutable, we can't change single characters after we create the string
-lists are mutable and can be changed
+lists are mutable and can be changed. Both are types of collections.
 
 ```element[0] = 'C'```
 
@@ -605,4 +605,135 @@ going beyond the end of the list causes an error. This is a runtime error, can't
 * Character strings can be indexed like lists.
 * Character strings are immutable.
 * Indexing beyond the end of the collection is an error.
+
+## For Loops
+
+executes a command for every value in a collection 
+
+```for number in [2,3,5]:```
+```    print(number)```
+
+equivalent of doing:
+```print(2)```
+```print(3)```
+```print(5)```
+
+body of the for loop must be indented
+one indent is usually four spaces or one tab
+
+```for number in [2,3,5]:```
+```print(number)```
+
+above causes indention error
+
+```firstName="jon"```
+```    lastName="smith```
+
+above causes unexpected indent error
+
+for loops are made up of a collection, loop variable and body
+
+```for number in [2,3,5]:```
+```    print(number)```
+
+in above, [2,3,5] is the collection, print(number) is the body and number is the variable
+loop variables can be called anything
+
+
+```for kitten in [2,3,5]:```
+```    print(kitten)```
+
+body can contain many statements, should only be a few lines at most for human readability
+
+```primes = [2,3,5]```
+```for p in primes:```
+```    squared = p ** 2```
+```    cubed = p ** 3```
+```    print(p,squared,cubed)```
+
+The range built in function can be used to iterate over a sequence of numbers. A range is not a list and the numbers are generated on the fly.
+
+```print(range(0,3))```
+```for number in range(0,3):```
+```    print(number)```
+
+range(N) = 0 to N-1
+range(1,N) = 1 to N-1
+
+accumulator pattern: initialise accumulator variable to zero/empty string/list, update it  using variables from the collection
+
+code to add up all numbers up to 10
+```total = 0```
+```for number in range(10):```
+```    total = total + (number+1)```
+```print(total)```
+
+total = total + number(+1) means add the current value of total to the current number +1
+we use number +1 instead of just number because the loop is 0 to 9 not 1 to 10
+
+### Exercises
+* classifying errors
+* tracing execution, strings work as collections to use in a for loop
+* reverse a string
+* practice accumulating, strings in a list get counted as whole strings in the loop variable
+* cumulative sum, += operator, shorthand for var = var +
+* identifying variable name errors, % divides and gives remainder. Returns zero when number is a multiple.
+* identifying item errors, 
+
+### Summary
+* A for loop executes commands once for each value in a collection.
+* The first line of the for loop must end with a colon, and the body must be indented.
+* Indentation is always meaningful in Python.
+* A for loop is made up of a collection, a loop variable, and a body.
+* Loop variables can be called anything (but it is strongly advised to have a meaningful name to the looping variable).
+* The body of a loop can contain many statements.
+* Use range to iterate over a sequence of numbers.
+* The Accumulator pattern turns many values into one.
+
+## Looping Over Data Sets
+For loops can be used to loop over a list of filenames and process each one in turn
+
+```import pandas```
+```for filename in ['data/gapminder_gdp_africa.csv', 'data/gapminder_gdp_asia.csv']:```
+```    data = pandas.read_csv(filename, index_col='country')```
+```    print(filename, data.min())```
+
+This will process the gap minder Africa and Asia data and print the minimum GDP for each 
+
+globbing matches a set of files with a pattern, like wildcards in the shell
+'*' means zero or more characters
+'?' neabs exactly one character
+glob library has useful globbing functions, glob.glob('pattern') returns a list of matching files
+
+```import glob```
+```print('all csv files in the data directory:',glob.glob('data/*.csv'))```
+
+above lists all CSV files in the data directory
+
+```print('all pdb files:',glob.glob('*.pdb'))```
+
+list all pdb files in current directory, should be an empty list
+
+We can use glob and for to process patches of files. Helps if files are named consistenly.
+
+```for filename in glob.glob('data/gapminder_*.csv'):```
+```    data = pandas.read_csv(filename)```
+```    print(filename, data['gdpPercap_1952'].min())```
+
+this will print the minimum 1952 GDP for each continent
+
+### Exercises
+
+* determining matches 
+* minimum file size, introduces tuples
+* comparing data, brings everything together, start by printing the answer, then graph it
+
+### Summary
+* Use a for loop to process files given a list of their names.
+* Use glob.glob to find sets of files whose names match a pattern.
+* Use glob and for to process batches of files.
+
+
+
+
 
