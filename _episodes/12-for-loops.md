@@ -393,6 +393,7 @@ print(total)
 > {: .python}
 > > ## Solution
 > > ~~~
+> > An IndexError which is a runtime error.
 > > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 > > print('My favorite season is ', seasons[3])
 > > ~~~
