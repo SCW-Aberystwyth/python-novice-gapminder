@@ -404,65 +404,47 @@ result of call is: None
 
 > ## Encapsulating Data Analysis
 >
-> Assume that the following code has been executed:
+> 1. Complete the blanks in the following code, which calculates the average Japanese GDP in the 1980s.
 >
 > ~~~
 > import pandas
 >
-> df = pandas.read_csv('data/gapminder_gdp_asia.csv', index_col=0)
-> japan = df.loc['Japan']
-> ~~~
-> {: .python}
->
-> 1.Complete the statements below to obtain the average GDP for Japan
-> across the years reported for the 1980s.
->
-> ~~~
-> year = 1983
-> gdp_decade = 'gdpPercap_' + str(year // ____)
-> avg = (japan.loc[gdp_decade + ___] + japan.loc[gdp_decade + ___]) / 2
-> ~~~
-> {: .python}
->
-> 2.Abstract the code above into a single function.
->
-> ~~~
 > def avg_gdp_in_decade(country, continent, year):
 >     df = pandas.read_csv('data/gapminder_gdp_'+___+'.csv',delimiter=',',index_col=0)
->     ____
->     ____
->     ____
+>     country_data = df.loc[country]
+>     gdp_decade = 'gdpPercap_' + str(year // ____) 
+>     avg = (country_data.loc[gdp_decade + ____ ] + country_data.loc[gdp_decade + ____ ]) / 2
 >     return avg
+>
+> df = pandas.read_csv('data/gapminder_gdp_asia.csv', index_col=0)
+> 
+> print('The average GDP for Japan in the 1980s was',avg_gdp_in_decade('Japan','asia',1980))
 > ~~~
 > {: .python}
 >
-> 3.How would you generalize this function
->    if you did not know beforehand which specific years occurred as columns in the data?
+> 2. How would you generalize this function 
+>    if you did not know beforehand that the GDP data would only be in years ending with 2 and 7?
 >    For instance, what if we also had data from years ending in 1 and 9 for each decade?
->    (Hint: use the columns to filter out the ones that correspond to the decade,
->    instead of enumerating them in the code.)
+>    (Hint: use a for loop to go through each data column from dataframe.index, checking which decade they are in)
 >
 > > ## Solution
 > >
 > > 1.
 > >
 > > ~~~
-> > year = 1983
-> > gdp_decade = 'gdpPercap_' + str(year // 10)
-> > avg = (japan.loc[gdp_decade + '2'] + japan.loc[gdp_decade + '7']) / 2
+> > import pandas
+> > 
+> > def avg_gdp_in_decade(country, continent, year):
+> >    df = pandas.read_csv('data/gapminder_gdp_'+ continent +'.csv',delimiter=',',index_col=0)
+> >    country_data = df.loc[country]
+> >    gdp_decade = 'gdpPercap_' + str(year // 10) 
+> >    avg = (country_data.loc[gdp_decade + '2' ] + country_data.loc[gdp_decade + '7' ]) / 2
+> >    return avg
+> >
+> > print('The average GDP for Japan in the 1980s was',avg_gdp_in_decade('Japan','asia',1980))
 > > ~~~
 > > {: .python}
 > >
-> > 2.
-> >
-> > ~~~
-> > def avg_gdp_in_decade(country, continent, year):
-> >     df = pandas.read_csv('data/gapminder_gdp_' + continent + '.csv', index_col=0)
-> >     c = df.loc[country]
-> >     gdp_decade = 'gdpPercap_' + str(year // 10)
-> >     avg = (c.loc[gdp_decade + '2'] + c.loc[gdp_decade + '7'])/2
-> >     return avg
-> > ~~~
 > > {: .python}
 > >
 > > 3.
@@ -473,39 +455,40 @@ result of call is: None
 > > ~~~
 > > def avg_gdp_in_decade(country, continent, year):
 > >     df = pandas.read_csv('data/gapminder_gdp_' + continent + '.csv', index_col=0)
-> >     c = df.loc[country]
+> >     country_data = df.loc[country]
 > >     gdp_decade = 'gdpPercap_' + str(year // 10)
 > >     total = 0.0
 > >     num_years = 0
-> >     for yr_header in c.index: # c's index contains reported years
+> >     for yr_header in country_data.index: # country_data's index contains reported years
 > >         if yr_header.startswith(gdp_decade):
-> >             total = total + c.loc[yr_header]
+> >             total = total + country_data.loc[yr_header]
 > >             num_years = num_years + 1
 > >     return total/num_years
+> >
+> > print('The average GDP for Japan in the 1980s was',avg_gdp_in_decade('Japan','asia',1980))
 > > ~~~
-> > {: .python}
-> > The function can now be called by:
-> > ~~~
-> > avg_gdp_in_decade('Japan','asia',1983)
-> > ~~~
-> > {: .python}
+> > The result should be: 
 > > 
 > > ~~~
-> > 20880.023800000003
+> > The average GDP for Japan in the 1980s was 20880.023800000003
 > > ~~~
 > > {: .output}
 > {: .solution}
 
-> ## Simulating a dynamical system
+> ## Converting celcius to farenheit
 >
-> In mathematics, a [dynamical system](https://en.wikipedia.org/wiki/Dynamical_system) is a system in which a function describes the time dependence of a point in a geometrical space.  Canonical example of a dynamical system is a system called the [logistic map](https://en.wikipedia.org/wiki/Logistic_map).
+> Degrees celcius to farenheit can be converted by multiplying by 9/5 and adding 32. 
+> ~~~
+> farenheit = (celcius * 9/5) + 32
+> ~~~
+> {: .python}
 >
 >
-> 1. Define a function called `logistic_map` that takes two inputs: `X`, representing the state of the system at time _t_, and a parameter `r`. This function should return a value representing the state of the system at time _t+1_.
+> 1. Define a function called `celcius_to_farenheit` that takes the input celcius_temp and returns the value in farenheit.
 >
-> 2. Using a `for` loop, iterate the `logistic_map` function defined in part 1 starting from an initial condition of 0.5 for `T=10`, `100`, and `1000` periods. Store the intermediate results in a list so that after the `for` loop terminates you have accumulated a sequence of values representing the state of the logistic map at time _t=0,1,...,T_.
+> 2. Using a `for` loop, generate the farenheit values for evey celcius temperature between 0 and 35 at 5 degree intervals and display both values.
 >
-> 3. Encapsulate the logic of your `for` loop into a function called `iterate` that takes the initial condition as its first input, the parameter `T` as its second input and the parameter `r` as its third input. The function should return the list of values representing the state of the logistic map at time _t=0,1,...,T_.
+> 3. Encapsulate the logic of your `for` loop into a function called `conversion_table` that will display a heading "C  F" and then display the celcius and corresponding farenheit temperature on each line.
 >
 >
 > > ## Solution
@@ -513,30 +496,25 @@ result of call is: None
 > > 1.
 > >
 > > ~~~
-> > def logistic_map(X, r):
-> >     return r * X * (1 - X)
+> > def celcius_to_farenheit(celcius_temp):
+> >     return (celcius * 9/5) + 32
 > > ~~~
 > > {: .python}
 > >
 > > 2.
 > >
 > > ~~~
-> > initial_condition = 0.5
-> > T = 10
-> > r = 1.0
-> > trajectory = [initial_condition]
-> > for t in range(1, T):
-> >     trajectory[t] = logistic_map(trajectory[t-1], r)
+> > for c in range(0, 35,5):
+> >     print(c,celcius_to_farenheit(c))
 > > ~~~
 > > {: .python}
 > >
 > > 3.
 > > ~~~
-> > def iterate(initial_condition, T, r):
-> >     trajectory = [initial_condition]
-> >     for t in range(1, T):
-> >         trajectory[t] = logistic_map(trajectory[t-1], r)
-> >     return trajectorys
+> > def conversion_table():
+> >     print("C / F")
+> >     for c in range(0, 35,5):
+> >         print(c,celcius_to_farenheit(c))
 > > ~~~
 > > {: .python}
 > {: .solution}
