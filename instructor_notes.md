@@ -734,6 +734,76 @@ this will print the minimum 1952 GDP for each continent
 * Use glob and for to process batches of files.
 
 
+## Writing Functions
 
+We can write our own functions to break down the code into manageable chunks. 
+Encapsulate a single task into a function. 
+Avoid repetition and enable reuse. 
+
+Begin writing a function with def, followed by function name, open brackets,  close brackets, colon
+ident function body
+
+
+```def print_greeting():```
+```    print('Hello')```
+
+definig a function doesn't run it, it has to be explicitly called
+
+```print_greeting()```
+
+parameters are defined between the ( and ), separate each by a comma
+
+nice analogy, () contains the ingredients, after the : contains the recipie.
+
+arguments given when calling must match the parameters we define
+each argument is assigned to a variable of the corresponding parameter, in the same order
+optionally you can name them when calling 
+
+```def print_date(year,month,day):```
+```    joined = str(year) + '/' + str(month) + '/' + str(day)```
+```    print(joined)```
+```print_date(1871,3,19)```
+
+or we can name the parameters when calling
+
+```print_date(month=3,day=19,year=1871)```
+
+functions can return a value using the return statement. 
+Return causes the function to exit. Returns can occur anywhere in the function, sometimes within if statements. More complex functions may contain multiple return statements.
+
+```def average(values):```
+```    if len(values) == 0:```
+```        return None```
+```    return sum(values) / len(values)```
+
+```a = average([1, 3, 4])```
+```print('average =',a)``` 
+gives 2.66666
+
+```print('average of empty list is:',average([]))```
+
+
+Without a return statement a function still returns None, when it reaches its end
+
+```result = print_date(1871, 3, 19)```
+```print('result of call is:', result)```
+
+### Exercises
+* identifying syntax errors
+* definition and use
+* order or operations
+* encapsulation
+* find the first
+* calling by name
+* Encapsulate if/print block
+* encapsulate data analysis, assume that each decade only has data for years ending 2 and 7
+* temperature conversion
+
+### Summary
+* Break programs down into functions to make them easier to understand.
+* Define a function using def with a name, parameters, and a block of code.
+* Defining a function does not run it.
+* Arguments in call are matched to parameters in definition.
+* Functions may return a result to their caller using return.
 
 
