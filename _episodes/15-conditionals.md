@@ -338,38 +338,29 @@ final velocity: 30.0
 > {: .solution}
 {: .challenge}
 
-> ## Initializing
+> ## Checking if values are None
 >
-> Modify this program so that it finds the largest and smallest values in the list
-> no matter what the range of values originally is.
->
+> Fill in the blanks so that this program won't put odd numbers or None's into values2.
+> Note: You can get the remainder of a division operation using %. 
 > ~~~
-> values = [...some test data...]
-> smallest, largest = None, None
+> values = [None, 1, 2, 3, 5, 8, 10, 13, 16]
+> values2 = []
 > for v in values:
->     if ____:
->         smallest, largest = v, v
->     ____:
->         smallest = min(____, v)
->         largest = max(____, v)
-> print(smallest, largest)
+>     if ____ and ____ % 2 == 0:
+>         values2.append(v)
+> print(values2)
 > ~~~
 > {: .python}
 >
-> What are the advantages and disadvantages of using this method
-> to find the range of the data?
 > > ## Solution
 > >
 > > ~~~
-> > values = [-2,1,65,78,-54,-24,100]
-> > smallest, largest = None, None
+> > values = [None, 1, 2, 3, 5, 8, 10, 13, 16]
+> > values2 = []
 > > for v in values:
-> >     if smallest==None and largest==None:
-> >         smallest, largest = v, v
-> >     else:
-> >         smallest = min(smallest, v)
-> >         largest = max(largest, v)
-> > print(smallest, largest)
+> >     if v != None and v % 2 == 0:
+> >         values2.append(v)
+> > print(values2)
 > > ~~~
 > > {: .python}
 > {: .solution}
