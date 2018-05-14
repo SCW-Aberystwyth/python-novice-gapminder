@@ -734,6 +734,130 @@ this will print the minimum 1952 GDP for each continent
 * Use glob and for to process batches of files.
 
 
+
+## Conditionals
+
+decides whether or not to execute some code based on a Condition.
+conditons can be > (greater than) >= (greater than or equal to) <= (less than or equal) < (less than), == (equal), != (not equal)
+
+similar structure to for loops, if, condition, colon. Code which if statement executes is indented.
+
+```mass = 3.54```
+```if mass > 3.0:```
+```    print(mass, 'is large')```
+```mass = 2.07```
+```if mass > 3.0:```
+```    print(mass, 'is large')```
+
+displays 3.54 is large, but not 2.07 is large
+
+conditionals often used in loops to evaluate each member of a collection.
+
+``masses = [3.54, 2.07, 9.22, 1.86, 1.71]``
+``for m in masses:``
+```    if m > 3.0:```
+```        print(m, 'is large')````
+
+else statement specifies what happens when if condition isn't true
+
+```masses = [3.54, 2.07, 9.22, 1.86, 1.71]```
+```for m in masses:```
+```    if m > 3.0:```
+```        print(m, 'is large')```
+```    else:```
+```        print(m, 'is small')```
+
+elif makes a second comparison if the first one is false
+there can be several of these following an if
+follow the last elif with an else to catch any condition which hasn't been caught by the if/elifs
+
+```masses = [3.54, 2.07, 9.22, 1.86, 1.71]```
+```for m in masses:```
+```    if m > 9.0:```
+```        print(m, 'is HUGE')```
+```    elif m > 3.0:```
+```        print(m, 'is large')```
+```    else:```
+```        print(m, 'is small')```
+
+Each condition will be checked in the order it appears. Can cause problems if you get things the wrong way.
+
+```grade = 85```
+```if grade >= 70:```
+```    print('grade is C')```
+```elif grade >= 80:```
+```    print('grade is B')```
+```elif grade >= 90:```
+```    print('grade is A')```
+
+outputs C, because 85 is greater than 70. Once that's been found to be true it doesn't try anything else.
+
+if doesn't go back and recheck things when they change.
+
+```velocity = 10.0```
+```if velocity > 20.0:```
+```    print('moving too fast')```
+```else:```
+```    print('adjusting velocity')```
+```    velocity = 50.0```
+
+This won't recheck with velocity = 50.0
+
+
+conditionals can be used to evolve the state of a variable over time 
+
+```velocity = 10.0```
+```for i in range(5): # execute the loop 5 times```
+```    print(i, ':', velocity)```
+```    if velocity > 20.0:```
+```        print('moving too fast')```
+```        velocity = velocity - 5.0```
+```    else:```
+```        print('moving too slow')```
+```        velocity = velocity + 10.0```
+```print('final velocity:', velocity)```
+
+It can be useful for debugging to create a table of values at each iteration of the loop
+
+multiple conditions can be checked at once with the "and" or "or" keywords. brackets can be used to group statements too.
+
+```mass     = [ 3.54,  2.07,  9.22,  1.86,  1.71]```
+```velocity = [10.00, 20.00, 30.00, 25.00, 20.00]```
+
+```i = 0```
+```for i in range(5):```
+```    if mass[i] > 5 and velocity[i] > 20:```
+```        print("Fast heavy object.  Duck!")```
+```    elif mass[i] > 2 and mass[i] <= 5 and velocity[i] <= 20:```
+```        print("Normal traffic")```
+```    elif mass[i] <= 2 and velocity[i] <= 20:```
+```        print("Slow light object.  Ignore it")```
+```    else:```
+```        print("Whoa!  Something is up with the data.  Check it")```
+
+instead of ```if mass[i] <= 2 or mass[i] >= 5 and velocity[i] > 20:```
+
+write one of these:
+
+```if (mass[i] <= 2 or mass[i] >= 5) and velocity[i] > 20:```
+```if mass[i] <= 2 or (mass[i] >= 5 and velocity[i] > 20):```
+
+
+### Excercises
+* tracing execution
+* trimming values
+* processing small files
+* Checking if values are None, uses % operator 
+
+### Summary
+* Use if statements to control whether or not a block of code is executed.
+* Conditionals are often used inside loops.
+* Use else to execute a block of code when an if condition is not true.
+* Use elif to specify additional tests.
+* Conditions are tested once, in order.
+* Create a table showing variables’ values to trace a program’s execution.
+
+
 ## Writing Functions
 
 We can write our own functions to break down the code into manageable chunks. 
@@ -788,6 +912,31 @@ Without a return statement a function still returns None, when it reaches its en
 ```result = print_date(1871, 3, 19)```
 ```print('result of call is:', result)```
 
+
+pandas can apply a function to each item in a dataframe for you.
+
+```data = pd.read_csv('Americas-data.csv')```
+```data['life_qrtl'] = data['lifeExp'].apply(calculate_life_quartile)```
+
+will apply calculate_life_quartile to every item in data['lifeExp'] and store it in data['life_qrtl']
+
+```def calculate_life_quartile(exp):```
+```    if exp < 58.41:```
+```        # This observation is in the first quartile```
+```        return 1```
+```    elif exp >= 58.41 and exp < 67.05:```
+```        # This observation is in the second quartile```
+```       return 2```
+```    elif exp >= 67.05 and exp < 71.70:```
+```        # This observation is in the third quartile```
+```       return 3```
+```    elif exp >= 71.70:```
+```        # This observation is in the fourth quartile```
+```       return 4```
+```    else:```
+```        # This observation has bad data```
+```       return None```
+
 ### Exercises
 * identifying syntax errors
 * definition and use
@@ -805,5 +954,76 @@ Without a return statement a function still returns None, when it reaches its en
 * Defining a function does not run it.
 * Arguments in call are matched to parameters in definition.
 * Functions may return a result to their caller using return.
+
+## Programming Style
+
+use meaingful variable and function names
+write comments
+use spaces not tabs to ident
+encapsulate in functions for re-use
+don't reinvent the wheel, use what libraries provide you
+
+PEP8 coding standard suggests a standard way everyone should write python. 
+Enable this by going to preferences, editor, code introspection/analysis, tick "real-time code style analysis"
+Yellow triangles will appear on lines with problems. Same applies to syntax errors. 
+
+alternatively run pep8 command from command line or paste into http://pep8online.com/
+better to check as you type
+
+use assertions to check for internal errors in code
+
+```def calc_bulk_density(mass, volume):```
+```    '''Return dry bulk density = powder mass / powder volume.'''```
+```    assert volume > 0```
+```    return mass / volume```
+
+Causes a run time error if volume isn't greater than 0. Assertions should only check things, they shouldn't change any variables. 
+
+docstrings document what a function does. Should be the first line after the def. Start with double quotes "
+Will display when help is called. can span multiple lines. 
+
+```def average(values):```
+```    "Return average of values, or None if no values are supplied."```
+
+```    if len(values) == 0:```
+```        return None```
+```    return sum(values) / average(values)```
+
+```help(average)```
+
+### Exercises
+* what will be shown
+* document this
+* code cleanup 
+
+### Summary
+* Follow standard Python style in your code.
+* Use docstrings to provide online help.
+
+## Wrap up
+
+What Python to use?
+
+Anaconda, provides everything you need in one package. Its large and some people don't want to install it.
+
+miniconda/conda, use the anaconda package manager and can install just what you need. Much smaller than full blown anaconda. Won't include spyder or jyputer by default. 
+
+Command line python, you'll have to install extra libraries yourself. System vs pip. Especially painful on Windows. You might have to do it this way on HPCs. 
+
+Jyputer notebooks, embed notes with your code. Nice for student assignment or lab notebook styles. Web based, code potentially runs on another computer. Edited on the web.
+
+Various other specialist distributions, owgeo4w (Open Source Geography for Windows) 
+
+Python community
+
+PyCon conference, SciPy utilities, NumPy, Pandas, SciKit Learn (machine learning)
+biopython
+GDAL
+sympy (symbolic maths)
+openCV
+
+
+
+
 
 
