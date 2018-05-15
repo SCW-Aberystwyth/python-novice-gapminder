@@ -23,12 +23,39 @@ turn out to be anything but when we have to explain them precisely.
 
 *   [PyCon](https://pycon.org/) is the largest annual conference for the Python community.
 
-*   [SciPy](https://scipy.org) is a rich collection of scientific utilities.
-    It is also the name of [a series of annual conferences](https://conference.scipy.org/).
+*   [osgeo4w] (http://osgeo4w.org) open source geographic software for Windows. Includes a python distribution for geographical applications.
+
+
+### Python Distributions
+
+*   [Anaconda](https://anaconda.org) - Anaconda, the "kitchen sink" distribution of Python.
+
+*   [Miniconda] (https://conda.io/miniconda.html) - Minimal version of the conda installer which can install Python libraries. 
 
 *   [Jupyter](https://jupyter.org) is the home of the Jupyter Notebook.
 
+### Useful Libraries
+
+*   [SciPy](https://scipy.org) is a rich collection of scientific utilities.
+    It is also the name of [a series of annual conferences](https://conference.scipy.org/).
+
+
 *   [Pandas](https://pandas.pydata.org) is the home of the Pandas data library.
+
+*   [Matplotlib] (http://matplotlib.org) is home to the matplotlib library.
+
+*   [sklearn] (http://scikit-learn.org) is home to the Scikit-learn machine learning library.
+
+*   [biopython] (http://biopython.org) is home to the biopython library which has lots of useful bioinformatics and biology related functions.
+
+*   [GDAL] (http://gdal.org/python/) is home to the geographic data abstraction library's python version. 
+
+*   [SymPy] (http://www.sympy.org) is home to the Symbolic Maths library.
+
+*   [openCV] (https://docs.opencv.org/3.1.0/d6/d00/tutorial_py_root.html) is home to the OpenCV computer vision library.
+
+
+### Extra Help
 
 *   Stack Overflow's [general Python section](http://stackoverflow.com/questions/tagged/python)
     can be helpful,
