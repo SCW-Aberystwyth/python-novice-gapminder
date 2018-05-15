@@ -48,7 +48,7 @@ turn out to be anything but when we have to explain them precisely.
 
 *   [biopython](http://biopython.org) is home to the biopython library which has lots of useful bioinformatics and biology related functions.
 
-*   [GDAL](http://gdal.org/python/) is home to the geographic data abstraction library's python version. 
+*   [GDAL](http://www.gdal.org/index.html) is home to the geospatial data abstraction library which includes a python version. 
 
 *   [SymPy](http://www.sympy.org) is home to the Symbolic Maths library.
 
