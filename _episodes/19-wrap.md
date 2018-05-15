@@ -23,14 +23,14 @@ turn out to be anything but when we have to explain them precisely.
 
 *   [PyCon](https://pycon.org/) is the largest annual conference for the Python community.
 
-*   [osgeo4w] (http://osgeo4w.org) open source geographic software for Windows. Includes a python distribution for geographical applications.
+*   [osgeo4w](http://osgeo4w.org) open source geographic software for Windows. Includes a python distribution for geographical applications.
 
 
 ### Python Distributions
 
 *   [Anaconda](https://anaconda.org) - Anaconda, the "kitchen sink" distribution of Python.
 
-*   [Miniconda] (https://conda.io/miniconda.html) - Minimal version of the conda installer which can install Python libraries. 
+*   [Miniconda](https://conda.io/miniconda.html) - Minimal version of the conda installer which can install Python libraries. 
 
 *   [Jupyter](https://jupyter.org) is the home of the Jupyter Notebook.
 
@@ -42,17 +42,17 @@ turn out to be anything but when we have to explain them precisely.
 
 *   [Pandas](https://pandas.pydata.org) is the home of the Pandas data library.
 
-*   [Matplotlib] (http://matplotlib.org) is home to the matplotlib library.
+*   [Matplotlib](http://matplotlib.org) is home to the matplotlib library.
 
-*   [sklearn] (http://scikit-learn.org) is home to the Scikit-learn machine learning library.
+*   [sklearn](http://scikit-learn.org) is home to the Scikit-learn machine learning library.
 
-*   [biopython] (http://biopython.org) is home to the biopython library which has lots of useful bioinformatics and biology related functions.
+*   [biopython](http://biopython.org) is home to the biopython library which has lots of useful bioinformatics and biology related functions.
 
-*   [GDAL] (http://gdal.org/python/) is home to the geographic data abstraction library's python version. 
+*   [GDAL](http://gdal.org/python/) is home to the geographic data abstraction library's python version. 
 
-*   [SymPy] (http://www.sympy.org) is home to the Symbolic Maths library.
+*   [SymPy](http://www.sympy.org) is home to the Symbolic Maths library.
 
-*   [openCV] (https://docs.opencv.org/3.1.0/d6/d00/tutorial_py_root.html) is home to the OpenCV computer vision library.
+*   [openCV](https://docs.opencv.org/3.1.0/d6/d00/tutorial_py_root.html) is home to the OpenCV computer vision library.
 
 
 ### Extra Help
