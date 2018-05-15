@@ -23,9 +23,6 @@ turn out to be anything but when we have to explain them precisely.
 
 *   [PyCon](https://pycon.org/) is the largest annual conference for the Python community.
 
-*   [osgeo4w](http://osgeo4w.org) open source geographic software for Windows. Includes a python distribution for geographical applications.
-
-
 ### Python Distributions
 
 *   [Anaconda](https://anaconda.org) - Anaconda, the "kitchen sink" distribution of Python.
@@ -34,11 +31,14 @@ turn out to be anything but when we have to explain them precisely.
 
 *   [Jupyter](https://jupyter.org) is the home of the Jupyter Notebook.
 
+*   [osgeo4w](http://osgeo4w.org) open source geographic software for Windows. Includes a python distribution for geographical applications.
+
 ### Useful Libraries
 
 *   [SciPy](https://scipy.org) is a rich collection of scientific utilities.
     It is also the name of [a series of annual conferences](https://conference.scipy.org/).
 
+*   [NumPy](https://www.numpy.org) is a library for numerical operations such as matrix manipulation.
 
 *   [Pandas](https://pandas.pydata.org) is the home of the Pandas data library.
 
