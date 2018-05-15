@@ -320,7 +320,7 @@ print(total)
 > The result should be `[1, 3, 5, 10]`.
 >
 > ~~~
-> cumulative.append([sum])
+> cumulative.append(sum)
 > for number in data:
 > cumulative = []
 > sum += number
