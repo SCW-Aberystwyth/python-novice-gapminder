@@ -955,6 +955,38 @@ will apply calculate_life_quartile to every item in data['lifeExp'] and store it
 * Arguments in call are matched to parameters in definition.
 * Functions may return a result to their caller using return.
 
+## Variable Scope
+
+Sometimes we need to reuse variable names in different places. e.g. inside a function and outside it.
+Need to make sure that these don't clash. Functions shouldn't have to worry that a variable of the same name might exist outside the function.
+Calling functions you shouldn't need to worry what variables inside the function are called.
+Where a variable is visible is called its scope.
+
+```pressure = 103.9```
+
+```def adjust(t):```
+```    temperature = t * 1.43 / pressure```
+```    return temperature```
+
+pressure is a global variable. Its visible everywhere, inside and outside the function.
+
+t and temperature are local variables. Only visible within the function.
+
+```print('adjusted:', adjust(0.9))```
+```print('temperature after call:', temperature)```
+
+prints the return value from adjust, but temperature is a nameerror as its not defined in the global scope
+
+global variables should be avoided where possible. Put all your code in functions, except a tiny bit to call the first function. 
+
+### Exercises
+* Local and Global variable use
+* reading error messages, introduces stack traces
+
+### Summary
+* scope of a variable is the part of the program that can see it.
+* avoid global variables.
+
 ## Programming Style
 
 use meaingful variable and function names
@@ -962,6 +994,8 @@ write comments
 use spaces not tabs to ident
 encapsulate in functions for re-use
 don't reinvent the wheel, use what libraries provide you
+Put all code in functions
+Avoid global variables
 
 PEP8 coding standard suggests a standard way everyone should write python. 
 Enable this by going to preferences, editor, code introspection/analysis, tick "real-time code style analysis"
