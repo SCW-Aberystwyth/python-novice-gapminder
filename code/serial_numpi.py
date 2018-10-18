@@ -5,7 +5,6 @@ import argparse
 
 np.random.seed(2017)
 
-@profile
 def inside_circle(total_count):
 
     x = np.float32(np.random.uniform(size=total_count))
