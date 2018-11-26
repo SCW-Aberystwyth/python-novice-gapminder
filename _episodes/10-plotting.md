@@ -35,11 +35,18 @@ plt.plot(time, position)
 
 *   We can also plot [Pandas dataframes](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html).
 *   This implicitly uses [`matplotlib.pyplot`](https://matplotlib.org/api/pyplot_api.html).
+*   Before plotting, we convert the column headings from a `string` to `integer` data type, since they represent numerical values
 
 ~~~
 import pandas
 
 data = pandas.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
+
+# Extract year from last 4 characters of each column name
+years = data.columns.str.strip('gdpPercap_')
+# Convert year values to integers, saving results back to dataframe
+data.columns = years.astype(int)
+
 data.loc['Australia'].plot()
 plt.xticks(rotation=90)
 ~~~
@@ -69,7 +76,14 @@ plt.ylabel('GDP per capita')
 ~~~
 {: .python}
 ![GDP barplot for Australia](../fig/9_gdp_bar.png)
-*   Extract years from the last four characters of the column names using dataframes function.
+## Data can also be plotted by calling the `matplotlib` `plot` function directly.
+*   The command is `plt.plot(x, y)`
+*   The color / format of markers can also be specified as an optical argument: e.g. 'b-' is a blue line, 'g--' is a green dashed line.
+
+## Get Australia data from dataframe
+
+~~~
+years = data.columns
 
 ~~~
 #dataframes function for string manipulation
@@ -225,3 +239,40 @@ data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 > > 
 > {: .solution}
 {: .challenge}
+
+> ## Saving your plot to a file
+> 
+> If you are satisfied with the plot you see you may want to save it to a file,
+> perhaps to include it in a publication. There is a function in the
+> matplotlib.pyplot module that accomplishes this:
+> [savefig](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html).
+> Calling this function, e.g. with
+> ~~~
+> plt.savefig('my_figure.png')
+> ~~~
+> {: .language-python}
+> 
+> will save the current figure to the file `my_figure.png`. The file format
+> will automatically be deduced from the file name extension (other formats
+> are pdf, ps, eps and svg).
+>
+> Note that functions in `plt` refer to a global figure variable
+> and after a figure has been displayed to the screen (e.g. with `plt.show`) 
+> matplotlib will make this  variable refer to a new empty figure.
+> Therefore, make sure you call `plt.savefig` before the plot is displayed to
+> the screen, otherwise you may find a file with an empty plot.
+>
+> When using dataframes, data is often generated and plotted to screen in one line,
+> and `plt.savefig` seems not to be a possible approach.
+> One possibility to save the figure to file is then to
+>
+> * save a reference to the current figure in a local variable (with `plt.gcf`) 
+> * call the `savefig` class method from that varible.
+>
+> ~~~
+> fig = plt.gcf() # get current figure
+> data.plot(kind='bar')
+> fig.savefig('my_figure.png')
+> ~~~
+> {: .language-python}
+{: .callout}
