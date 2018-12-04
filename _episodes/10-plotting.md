@@ -85,7 +85,6 @@ plt.ylabel('GDP per capita')
 ~~~
 years = data.columns
 
-~~~
 #dataframes function for string manipulation
 years = data.columns.str.strip('gdpPercap_')
 
