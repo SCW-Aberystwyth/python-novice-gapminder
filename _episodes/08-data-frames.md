@@ -39,7 +39,7 @@ Remember that a DataFrame provides a *index* as a way to identify the rows of th
 a row, then, has a *position* inside the table as well as a *label*, which
 uniquely identifies its *entry* in the DataFrame.
 
-## Use `DataFrame.iloc[..., ...]` to select values by their (entry) position
+### Use `DataFrame.iloc[..., ...]` to select values by their (entry) position
 
 *   Can specify location by numerical index analogously to 2D version of character selection in strings.
 
@@ -54,7 +54,7 @@ print(data.iloc[0, 0])
 ~~~
 {: .output}
 
-## Use `DataFrame.loc[..., ...]` to select values by their (entry) label.
+### Use `DataFrame.loc[..., ...]` to select values by their (entry) label.
 
 *   Can specify location by row name analogously to 2D version of dictionary keys.
 
@@ -67,7 +67,7 @@ print(data.loc["Albania", "gdpPercap_1952"])
 1601.056136
 ~~~
 {: .output}
-## Use `:` on its own to mean all columns or all rows.
+### Use `:` on its own to mean all columns or all rows.
 
 *   Just like Python's usual slicing notation.
 
@@ -114,7 +114,7 @@ Name: gdpPercap_1952, dtype: float64
 *   Would get the same result printing `data["gdpPercap_1952"]`
 *   Also get the same result printing `data.gdpPercap_1952` (since it's a column name)
 
-## Select multiple columns or rows using `DataFrame.loc` and a named slice.
+### Select multiple columns or rows using `DataFrame.loc` and a named slice.
 
 ~~~
 print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'])
@@ -136,7 +136,7 @@ ends**, which differs from **slicing using `iloc`**, where slicing indicates
 everything up to but not including the final index. 
 
 
-## Result of slicing can be used in further operations.
+### Result of slicing can be used in further operations.
 
 *   Usually don't just print a slice.
 *   All the statistical operators that work on entire dataframes
@@ -202,7 +202,7 @@ Poland               False          False          False
 ~~~
 {: .output}
 
-## Select values or NaN using a Boolean mask.
+### Select values or NaN using a Boolean mask.
 
 *   A frame full of Booleans is sometimes called a *mask* because of how it can be used.
 
@@ -244,7 +244,7 @@ max      13450.401510    16361.876470    18965.055510
 
 > ## Selection of Individual Values
 >
-> Assume Pandas has been imported into your notebook
+> Assume Pandas has been imported into your script
 > and the Gapminder GDP data for Europe has been loaded:
 >
 > ~~~
