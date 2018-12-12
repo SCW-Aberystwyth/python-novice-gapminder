@@ -167,7 +167,7 @@ dtype: float64
 ~~~
 {: .output}
 
-## Use comparisons to select data based on value.
+### Use comparisons to select data based on value.
 
 *   Comparison is applied element by element.
 *   Returns a similarly-shaped dataframe of `True` and `False`.
