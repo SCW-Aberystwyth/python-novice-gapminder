@@ -10,7 +10,7 @@ objectives:
 keypoints:
 - "Use variables to store values."
 - "Use `print` to display values."
-- "Variables persist between cells."
+- "Variables persist between lines."
 - "Variables must be created before they are used."
 - "Variables can be used in calculations."
 - "Use an index to get a single character from a string."
