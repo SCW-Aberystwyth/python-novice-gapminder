@@ -114,6 +114,24 @@ round(3.712, 1)
 ~~~
 {: .output}
 
+
+## Every function returns something.
+
+*   Every function call produces some result.
+*   If the function doesn't have a useful result to return,
+    it usually returns the special value `None`.
+
+~~~
+result = print('example')
+print('result of print is', result)
+~~~
+{: .python}
+~~~
+example
+result of print is None
+~~~
+{: .output}
+
 ## Use the built-in function `help` to get help for a function.
 
 *   Every built-in function has online documentation.
@@ -195,22 +213,6 @@ NameError: name 'aege' is not defined
 
 *   Fix syntax errors by reading the source and runtime errors by tracing execution.
 
-## Every function returns something.
-
-*   Every function call produces some result.
-*   If the function doesn't have a useful result to return,
-    it usually returns the special value `None`.
-
-~~~
-result = print('example')
-print('result of print is', result)
-~~~
-{: .python}
-~~~
-example
-result of print is None
-~~~
-{: .output}
 
 > ## What Happens When
 >
