@@ -17,9 +17,9 @@ least a day in advance of the workshop.  If you encounter problems with the
 installation procedure, ask your workshop organizers via e-mail for assistance so
 you are ready to go as soon as the workshop begins.
 
-### Windows - [Video tutorial][video-windows]
+### Windows 
 
-1. Open [http://continuum.io/downloads][continuum-windows]
+1. Open [http://anaconda.org/distribution/#windows][continuum-windows]
    with your web browser.
 
 2. Download the Python 3 installer for Windows.
@@ -28,9 +28,9 @@ you are ready to go as soon as the workshop begins.
    default settings. The only exception is to check the 
    **Make Anaconda the default Python** option.
 
-### Mac OS X - [Video tutorial][video-mac]
+### Mac OS X
 
-1. Open [http://continuum.io/downloads][continuum-mac]
+1. Open [http://anaconda.org/distribition/#macos][continuum-mac]
    with your web browser.
 
 2. Download the Python 3 installer for OS X.
@@ -42,7 +42,7 @@ you are ready to go as soon as the workshop begins.
 Note that the following installation steps require you to work from the shell. 
 If you run into any difficulties, please request help before the workshop begins.
 
-1.  Open [http://continuum.io/downloads][continuum-linux] with your web browser.
+1.  Open [http://anaconda.org/distribution/#linux][continuum-linux] with your web browser.
 
 2.  Download the Python 3 installer for Linux.
 
@@ -75,41 +75,22 @@ If you run into any difficulties, please request help before the workshop begins
 The data we will be using is taken from the [gapminder][gapminder] dataset.
 To obtain it, download and unzip the file 
 [python-novice-gapminder-data.zip]({{page.root}}/files/python-novice-gapminder-data.zip).
-In order to follow the presented material, you should launch a Jupyter 
-notebook in the root directory (see [Starting Python](#Starting-Python)).
+In order to follow the presented material, you should launch Spyder (see [Starting Python](#Starting-Python)).
 
 ## Starting Python
 
-We will teach Python using the [Jupyter notebook][jupyter], a 
-programming environment that runs in a web browser. Jupyter requires a reasonably 
-up-to-date browser, preferably a current version of Chrome, Safari, or Firefox 
-(note that Internet Explorer version 9 and below are *not* supported). If you 
-installed Python using Anaconda, Jupyter should already be on your system. If 
-you did not use Anaconda, use the Python package manager pip
-(see the [Jupyter website][jupyter-install] for details.)
-
-To start the notebook, open a terminal or git bash and type the command:
+We will teach Python using the Spyder Intergrate Development Environment (IDE). Spyder is included with Anaconda and can be launched from the graphical Anaconda Navigator or from an Anaconda terminal by typing the command `spyder`. 
 
 ~~~
-$ jupyter notebook
+$ spyder
 ~~~
 {: .bash}
 
-To start the Python interpreter without the notebook, open a terminal 
-or Git Bash and type the command:
-
-~~~
-$ python
-~~~
-{: .bash}
-
-[anaconda]: https://www.continuum.io/anaconda
-[continuum-mac]: http://continuum.io/downloads#_macosx
-[continuum-linux]: http://continuum.io/downloads#_unix
-[continuum-windows]: http://continuum.io/downloads#_windows
+[anaconda]: https://www.anaconda.com/distribution/#download-section
+[continuum-mac]: https://www.anaconda.com/distribution/#macos
+[continuum-linux]: https://www.anaconda.com/distribution/#linux
+[continuum-windows]: https://www.anaconda.com/distribution/#windows
 [gapminder]: http://gapminder.org
-[jupyter]: http://jupyter.org/
-[jupyter-install]: http://jupyter.readthedocs.io/en/latest/install.html#optional-for-experienced-python-developers-installing-jupyter-with-pip
 [python]: https://python.org
 [video-mac]: https://www.youtube.com/watch?v=TcSAln46u9U
 [video-windows]: https://www.youtube.com/watch?v=xxQ0mzZ8UvA
