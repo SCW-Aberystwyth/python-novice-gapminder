@@ -550,7 +550,7 @@ result of call is: None
 > >
 > > ~~~
 > > def celcius_to_farenheit(celcius_temp):
-> >     return (celcius * 9/5) + 32
+> >     return (celcius_temp * 9/5) + 32
 > > ~~~
 > > {: .python}
 > >
