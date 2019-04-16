@@ -299,7 +299,7 @@ IndexError: string index out of range
 > {: .solution}
 {: .challenge}
 
-> ## Stepping Through a List
+> ## Stepping Through a String
 >
 > What does the following program print?
 >
