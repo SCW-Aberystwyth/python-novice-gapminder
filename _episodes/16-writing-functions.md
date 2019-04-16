@@ -183,7 +183,7 @@ result of call is: None
 > is an example, using the definition above.
 >
 > ~~~
-> data = pd.read_csv('Americas-data.csv')
+> data = pd.read_csv('data/Americas-lifeExp.csv', index_col='country')
 > data['life_qrtl'] = data['lifeExp'].apply(calculate_life_quartile)
 > ~~~
 > {: .python}
