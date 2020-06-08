@@ -300,6 +300,7 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 > 3.  What does `atom_name[:high]` (without a value before the colon) do?
 > 4.  What does `atom_name[:]` (just a colon) do?
 > 5.  What does `atom_name[number:negative-number]` do?
+>
 > > ## Solutions
 > >
 > > 1. `thing[low:high]` returns a slice from `low` to the value before `high`
