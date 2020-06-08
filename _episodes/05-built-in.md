@@ -193,7 +193,7 @@ SyntaxError: unexpected EOF while parsing
 *   The message indicates a problem on first line of the input ("line 1").
     *   In this case the "ipython-input" section of the file name tells us that
         we are working with input into IPython,
-        the Python interpreter used by the Jupyter Notebook.
+        the Python interpreter used by Spyder.
 *   The `-6-` part of the filename indicates that
     the error occurred in cell 6 of our Notebook.
 *   Next is the problematic line of code,
