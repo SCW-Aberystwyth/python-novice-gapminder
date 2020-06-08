@@ -6,7 +6,7 @@ exercises: 0
 break: 15
 ---
 # Feedback
- On one of your poststick notes write the following:
+ On one of your postit notes or in the etherpad write the following:
  * One thing that has been good so far.
  * One thing that you've struggled to understand or would like more explanation of.
  * are we going too fast, too slow or about right?
