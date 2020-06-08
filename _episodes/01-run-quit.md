@@ -36,7 +36,7 @@ keypoints:
 
 *   This will start a Spyder. 
 
-*Screenshot of [Spyder](https://github.com/)
+![Screenshot of Spyder](../fig/spyder_screenshot.png)
 
 ## Spyder has console and file based running.
 
