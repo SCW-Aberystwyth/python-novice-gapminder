@@ -527,6 +527,9 @@ result of call is: None
 > > ~~~
 > > {: .output}
 > {: .solution}
+{: .challenge}
+
+
 
 > ## Converting celcius to farenheit
 >
