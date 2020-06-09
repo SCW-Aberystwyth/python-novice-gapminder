@@ -31,7 +31,7 @@ keypoints:
     ~~~
     $ spyder
     ~~~
-    {: .python}
+    {: .bash}
 *   Or click on the Spyder icon on your Start menu.
 
 *   This will start a Spyder. 
