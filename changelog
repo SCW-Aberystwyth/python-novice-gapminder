@@ -1,0 +1,34 @@
+# Change log
+
+removed all references to jyputer notebooks
+
+## Variables
+* changed thing to atom_name in the last exercise
+
+## Pandas data frames
+* removed lambda exercise as these were never introduced and are never uesd again in the notes
+
+
+## Functions 
+* functions done after conditionals as there was lots of use of them in that section without prior explanation
+* simplified Japan GDP example 
+
+## Conditionals
+* Changed Initializing exercise to checking for None
+* 
+
+
+## Wrap up
+
+Extra links added
+
+moved Using Functions With Conditionals in Pandas to functions
+
+
+# Not changed, but should do
+
+Lists exercise on negative indicies (How large is a slice). Wording is ambiguous, some more concerete examples would be helpful.
+
+Looping over datasets, minimum file size exercise, introduces inf and requires it as an answer but has never defined this.
+
+functions exercise, data used in pandas doesn't exist get it from https://www.gapminder.org/data/
