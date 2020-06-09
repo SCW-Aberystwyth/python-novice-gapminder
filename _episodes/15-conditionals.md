@@ -366,6 +366,43 @@ final velocity: 30.0
 > {: .solution}
 {: .challenge}
 
+> ## Initializing
+>
+> Modify this program so that it finds the largest and smallest values in the list
+> no matter what the range of values originally is.
+>
+> ~~~
+> values = [...some test data...]
+> smallest, largest = None, None
+> for v in values:
+>     if ____:
+>         smallest, largest = v, v
+>     ____:
+>         smallest = min(____, v)
+>         largest = max(____, v)
+> print(smallest, largest)
+> ~~~
+> {: .language-python}
+>
+> What are the advantages and disadvantages of using this method
+> to find the range of the data?
+> > ## Solution
+> >
+> > ~~~
+> > values = [-2,1,65,78,-54,-24,100]
+> > smallest, largest = None, None
+> > for v in values:
+> >     if smallest==None and largest==None:
+> >         smallest, largest = v, v
+> >     else:
+> >         smallest = min(smallest, v)
+> >         largest = max(largest, v)
+> > print(smallest, largest)
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
 > ## Using Functions With Conditionals in Pandas
 >
 > Functions will often contain conditionals.  Here is a short example that
