@@ -40,7 +40,7 @@ keypoints:
 def print_greeting():
     print('Hello!')
 ~~~
-{: .python}
+{: .language-python}
 
 ## Defining a function does not run it.
 
@@ -51,7 +51,7 @@ def print_greeting():
 ~~~
 print_greeting()
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 Hello!
 ~~~
@@ -73,7 +73,7 @@ def print_date(year, month, day):
 
 print_date(1871, 3, 19)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 1871/3/19
 ~~~
@@ -84,7 +84,7 @@ specify them in any order:
 ~~~
 print_date(month=3, day=19, year=1871)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 1871/3/19
 ~~~
@@ -108,13 +108,13 @@ def average(values):
         return None
     return sum(values) / len(values)
 ~~~
-{: .python}
+{: .language-python}
 
 ~~~
 a = average([1, 3, 4])
 print('average of actual values:', a)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 2.6666666666666665
 ~~~
@@ -123,7 +123,7 @@ print('average of actual values:', a)
 ~~~
 print('average of empty list:', average([]))
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 None
 ~~~
@@ -136,7 +136,7 @@ None
 result = print_date(1871, 3, 19)
 print('result of call is:', result)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 1871/3/19
 result of call is: None
@@ -170,7 +170,7 @@ result of call is: None
 >
 > calculate_life_quartile(62.5)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > ~~~
 > 2
@@ -186,7 +186,7 @@ result of call is: None
 > data = pd.read_csv('data/Americas-lifeExp.csv', index_col='country')
 > data['life_qrtl'] = data['lifeExp'].apply(calculate_life_quartile)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > There is a lot in that second line, so let's take it piece by piece.
 > On the right side of the `=` we start with `data['lifeExp']`, which is the
@@ -211,7 +211,7 @@ result of call is: None
 >    print("But at least python tells us about them!")
 >   print("So they are usually not too hard to fix.")
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > >
@@ -221,7 +221,7 @@ result of call is: None
 > >   print("But at least Python tells us about them!")
 > >   print("So they are usually not too hard to fix.")
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -235,7 +235,7 @@ result of call is: None
 >
 > print('calling', report, 22.5)
 > ~~~
-> {: .python}
+> {: .language-python}
 > > ## Solution
 > >
 > > ~~~
@@ -260,7 +260,7 @@ result of call is: None
 > result = print_date(1871, 3, 19)
 > print('result of call is:', result)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > printed:
 > ~~~
@@ -279,7 +279,7 @@ result of call is: None
 >    joined = str(year) + '/' + str(month) + '/' + str(day)
 >    print(joined)
 > ~~~
-> {: .python}
+> {: .language-python}
 > 
 > > ## Solution
 > > 
@@ -304,7 +304,7 @@ result of call is: None
 >     data = ____
 >     return ____
 > ~~~
-> {: .python}
+> {: .language-python}
 > > ## Solution
 > >
 > > ~~~
@@ -314,7 +314,7 @@ result of call is: None
 > >     data = pandas.read_csv(filename)
 > >     return data.min()
 > > ~~~
-> {: .python}
+> {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -330,7 +330,7 @@ result of call is: None
 >         if ____:
 >             return ____
 > ~~~
-> {: .python}
+> {: .language-python}
 > > ## Solution
 > >
 > > ~~~
@@ -339,13 +339,13 @@ result of call is: None
 > >         if v<0:
 > >             return v
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > > If an empty list is passed to this function, it returns `None`:
 > > ~~~
 > > my_list = []
 > > print(first_negative(my_list)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > > ~~~
 > > None
 > > ~~~
@@ -366,12 +366,12 @@ result of call is: None
 > ~~~
 > print_date(day=1, month=2, year=2003)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > 1.  What does `print_date(day=1, month=2, year=2003)` print?
 > 2.  When have you seen a function call like this before?
 > 3.  When and why is it useful to call functions this way?
-> {: .python}
+> {: .language-python}
 > > ## Solution
 > > 
 > > 1. `2003/2/1`
@@ -410,7 +410,7 @@ result of call is: None
 >     else:
 >        print("small")
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 >
 > The simplified program  follows.  What function definition will make it functional?
@@ -427,7 +427,7 @@ result of call is: None
 >     print(mass,print_egg_label(mass))    
 >
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 >
 > 1. Create a function definition for `print_egg_label()` that will work with the revised program above.  Note, the function's return value will be significant. Sample output might be `71.23 large`.
@@ -451,7 +451,7 @@ result of call is: None
 > >     else:
 > >         return("small")
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -473,7 +473,7 @@ result of call is: None
 > 
 > print('The average GDP for Japan in the 1980s was',avg_gdp_in_decade('Japan','asia',1980))
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > 2. How would you generalize this function 
 >    if you did not know beforehand that the GDP data would only be in years ending with 2 and 7?
@@ -496,9 +496,9 @@ result of call is: None
 > >
 > > print('The average GDP for Japan in the 1980s was',avg_gdp_in_decade('Japan','asia',1980))
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
-> > {: .python}
+> > {: .language-python}
 > >
 > > 3.
 > > 
@@ -534,7 +534,7 @@ result of call is: None
 > ~~~
 > farenheit = (celcius * 9/5) + 32
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 >
 > 1. Define a function called `celcius_to_farenheit` that takes the input celcius_temp and returns the value in farenheit.
@@ -552,7 +552,7 @@ result of call is: None
 > > def celcius_to_farenheit(celcius_temp):
 > >     return (celcius_temp * 9/5) + 32
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > 2.
 > >
@@ -560,7 +560,7 @@ result of call is: None
 > > for c in range(0, 35,5):
 > >     print(c,celcius_to_farenheit(c))
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > 3.
 > > ~~~
@@ -569,6 +569,6 @@ result of call is: None
 > >     for c in range(0, 35,5):
 > >         print(c,celcius_to_farenheit(c))
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
